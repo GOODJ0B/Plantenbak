@@ -10,10 +10,10 @@ GPIO.setup(pumpPin, GPIO.OUT)
 
 def activatePump(duration):
     print("Pump on.")
-    GPIO.output(pumpPin, GPIO.HIGH)
+    GPIO.output(pumpPin, GPIO.LOW)
     time.sleep(duration)
     print("pump off")
-    GPIO.output(pumpPin, GPIO.LOW)
+    GPIO.output(pumpPin, GPIO.HIGH)
 
 
 activatePump(10)

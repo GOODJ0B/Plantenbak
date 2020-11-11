@@ -9,12 +9,16 @@ GPIO.setwarnings(False)
 GPIO.setup(pumpPin, GPIO.OUT)
 GPIO.setup(sensorPin, GPIO.IN)
 
+
 def activatePump(duration):
     print("Pump on.")
     GPIO.output(pumpPin, GPIO.LOW)
     for i in range(10):
-       print(str(GPIO.input(sensorPin)))
-       time.sleep(duration / 10)
+        done = GPIO.input(sensorPin)
+        print(str(GPIO.input(sensorPin)))
+        time.sleep(duration / 10)
+        if done:
+            break
     print("pump off")
     GPIO.output(pumpPin, GPIO.HIGH)
 

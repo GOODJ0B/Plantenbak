@@ -20,7 +20,3 @@ def activatePump(duration):
 
 
 activatePump(10)
-
-while True:
-    print(str(GPIO.input(sensorPin)))
-    time.sleep(1)
